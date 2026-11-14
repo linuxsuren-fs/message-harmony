@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and release HAP
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up HarmonyOS SDK (command-line tools)
+        id: setup-sdk
+        uses: hhtczengjing/setup_ohos_sdk@1b3b5eb5b9eb0b0ae7b30b1ab3dfa1ca723b7090 # master
+        with:
+          version: '5.0.13.240'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build HAP (release)
+        env:
+          DEVECO_SDK_HOME: ${{ steps.setup-sdk.outputs.sdk-home }}
+        run: |
+          "${{ steps.setup-sdk.outputs.command-line-tools-path }}/bin/hvigorw" --mode module -p module=entry@default -p product=default -p buildMode=release assembleHap --no-daemon
+
+      # 重命名为 message-harmony-<版本>-release-unsigned.hap（未签名）
+      - name: Rename HAP
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          ls entry/build/default/outputs/default/
+          cp entry/build/default/outputs/default/*.hap "message-harmony-${version}-release-unsigned.hap"
+          ls -lh message-harmony-*.hap
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: message-harmony-*-release-unsigned.hap
+          generate_release_notes: true

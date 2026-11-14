@@ -1,0 +1,148 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "Message Hub client entry module"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Message Hub client"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Message Hub"
+    },
+    {
+      "name": "page_login_title",
+      "value": "Sign in to receive your messages in real time"
+    },
+    {
+      "name": "label_server_address",
+      "value": "Server address"
+    },
+    {
+      "name": "hint_server_address",
+      "value": "https://message.example.com"
+    },
+    {
+      "name": "label_email",
+      "value": "Email"
+    },
+    {
+      "name": "hint_email",
+      "value": "you@example.com"
+    },
+    {
+      "name": "label_password",
+      "value": "Password"
+    },
+    {
+      "name": "action_login",
+      "value": "Sign in"
+    },
+    {
+      "name": "login_success",
+      "value": "Signed in"
+    },
+    {
+      "name": "err_input_incomplete",
+      "value": "Fill in the server address, email, and password"
+    },
+    {
+      "name": "err_network",
+      "value": "Cannot reach the server. Check the network or the address."
+    },
+    {
+      "name": "err_unauthorized",
+      "value": "Incorrect email or password"
+    },
+    {
+      "name": "err_server",
+      "value": "The server failed to process the request. Try again later."
+    },
+    {
+      "name": "session_expired",
+      "value": "Session expired. Please sign in again."
+    },
+    {
+      "name": "page_messages_title",
+      "value": "Messages"
+    },
+    {
+      "name": "scope_all",
+      "value": "All"
+    },
+    {
+      "name": "scope_own",
+      "value": "My tenant"
+    },
+    {
+      "name": "scope_public",
+      "value": "Public"
+    },
+    {
+      "name": "action_refresh",
+      "value": "Refresh"
+    },
+    {
+      "name": "action_logout",
+      "value": "Sign out"
+    },
+    {
+      "name": "logout_confirm_title",
+      "value": "Sign out"
+    },
+    {
+      "name": "logout_confirm_message",
+      "value": "Signing out clears the local session and returns to the sign-in page."
+    },
+    {
+      "name": "action_cancel",
+      "value": "Cancel"
+    },
+    {
+      "name": "action_confirm",
+      "value": "Confirm"
+    },
+    {
+      "name": "sse_connected",
+      "value": "Live stream connected"
+    },
+    {
+      "name": "sse_connecting",
+      "value": "Live stream disconnected. Reconnecting…"
+    },
+    {
+      "name": "list_empty",
+      "value": "No messages yet"
+    },
+    {
+      "name": "list_loading",
+      "value": "Loading…"
+    },
+    {
+      "name": "list_loading_more",
+      "value": "Loading more…"
+    },
+    {
+      "name": "untitled",
+      "value": "Untitled"
+    },
+    {
+      "name": "level_info",
+      "value": "Info"
+    },
+    {
+      "name": "level_warning",
+      "value": "Warning"
+    },
+    {
+      "name": "level_error",
+      "value": "Error"
+    },
+    {
+      "name": "badge_public",
+      "value": "Public"
+    }
+  ]
+}

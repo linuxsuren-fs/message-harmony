@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+
+jobs:
+  build:
+    name: Build HAP (debug)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 安装 HarmonyOS Next 命令行工具（含 SDK + hvigor + 内置 Node）
+      # 仓库: https://github.com/hhtczengjing/setup_ohos_sdk
+      # 说明: 无版本 tag，故按 master 最新提交 SHA 固定；SDK 清单来自
+      #       https://github.com/hhtczengjing/ohos_command_line_tools
+      - name: Set up HarmonyOS SDK (command-line tools)
+        id: setup-sdk
+        uses: hhtczengjing/setup_ohos_sdk@1b3b5eb5b9eb0b0ae7b30b1ab3dfa1ca723b7090 # master
+        with:
+          version: '5.0.13.240' # HarmonyOS 5.0.5 Release，匹配 compatibleSdkVersion 5.0.0(12)
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 说明：仓库内的 ./hvigorw 包装器在 dependencies 为空时依赖本机命令行工具目录，
+      # CI 上无法自举；因此显式调用 Action 安装出的工具链 hvigorw（与本地行为一致）。
+      # 本工具链上 assembleHap 为模块级任务，需 --mode module 指定模块。
+      - name: Build HAP (debug)
+        env:
+          DEVECO_SDK_HOME: ${{ steps.setup-sdk.outputs.sdk-home }}
+        run: |
+          "${{ steps.setup-sdk.outputs.command-line-tools-path }}/bin/hvigorw" --mode module -p module=entry@default -p product=default assembleHap --no-daemon
+
+      - name: Upload HAP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: message-harmony-debug-hap
+          path: entry/build/default/outputs/**/*.hap
+          if-no-files-found: error

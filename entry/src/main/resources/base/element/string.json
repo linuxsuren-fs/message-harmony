@@ -1,0 +1,148 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "消息中心客户端入口模块"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "消息中心客户端"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "消息中心"
+    },
+    {
+      "name": "page_login_title",
+      "value": "登录后实时接收你的消息"
+    },
+    {
+      "name": "label_server_address",
+      "value": "服务器地址"
+    },
+    {
+      "name": "hint_server_address",
+      "value": "https://message.example.com"
+    },
+    {
+      "name": "label_email",
+      "value": "邮箱"
+    },
+    {
+      "name": "hint_email",
+      "value": "you@example.com"
+    },
+    {
+      "name": "label_password",
+      "value": "密码"
+    },
+    {
+      "name": "action_login",
+      "value": "登录"
+    },
+    {
+      "name": "login_success",
+      "value": "登录成功"
+    },
+    {
+      "name": "err_input_incomplete",
+      "value": "请填写服务器地址、邮箱和密码"
+    },
+    {
+      "name": "err_network",
+      "value": "无法连接服务器，请检查网络与地址"
+    },
+    {
+      "name": "err_unauthorized",
+      "value": "邮箱或密码错误"
+    },
+    {
+      "name": "err_server",
+      "value": "服务器处理出错，请稍后重试"
+    },
+    {
+      "name": "session_expired",
+      "value": "会话已过期，请重新登录"
+    },
+    {
+      "name": "page_messages_title",
+      "value": "消息中心"
+    },
+    {
+      "name": "scope_all",
+      "value": "全部"
+    },
+    {
+      "name": "scope_own",
+      "value": "本租户"
+    },
+    {
+      "name": "scope_public",
+      "value": "公开"
+    },
+    {
+      "name": "action_refresh",
+      "value": "刷新"
+    },
+    {
+      "name": "action_logout",
+      "value": "退出登录"
+    },
+    {
+      "name": "logout_confirm_title",
+      "value": "退出登录"
+    },
+    {
+      "name": "logout_confirm_message",
+      "value": "退出后将清除本机会话并返回登录页。"
+    },
+    {
+      "name": "action_cancel",
+      "value": "取消"
+    },
+    {
+      "name": "action_confirm",
+      "value": "确认"
+    },
+    {
+      "name": "sse_connected",
+      "value": "实时连接已建立"
+    },
+    {
+      "name": "sse_connecting",
+      "value": "实时连接中断，正在重连…"
+    },
+    {
+      "name": "list_empty",
+      "value": "暂无消息"
+    },
+    {
+      "name": "list_loading",
+      "value": "加载中…"
+    },
+    {
+      "name": "list_loading_more",
+      "value": "加载更多…"
+    },
+    {
+      "name": "untitled",
+      "value": "无标题"
+    },
+    {
+      "name": "level_info",
+      "value": "信息"
+    },
+    {
+      "name": "level_warning",
+      "value": "警告"
+    },
+    {
+      "name": "level_error",
+      "value": "错误"
+    },
+    {
+      "name": "badge_public",
+      "value": "公开"
+    }
+  ]
+}

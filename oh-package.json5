@@ -1,0 +1,9 @@
+{
+  "modelVersion": "5.0.0",
+  "name": "message-harmony",
+  "version": "1.0.0",
+  "description": "HarmonyOS client of message-hub: login, list and live-stream tenant/public messages.",
+  "dependencies": {},
+  "devDependencies": {},
+  "dynamicDependencies": {}
+}
